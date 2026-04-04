@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dc48r3o2a3h3n"]
+
+[ext_resource type="Script" uid="uid://da1dnkf20tinv" path="res://scripts/space.gd" id="1_dtwn4"]
+[ext_resource type="PackedScene" uid="uid://dxtenddefygd3" path="res://scenes/space_chunk.tscn" id="1_rysn1"]
+[ext_resource type="PackedScene" uid="uid://cl5gejp3whfpg" path="res://scenes/player.tscn" id="2_c6rj5"]
+
+[node name="Space" type="Node3D" unique_id=79901660]
+script = ExtResource("1_dtwn4")
+
+[node name="SpaceChunk" parent="." unique_id=2043521316 instance=ExtResource("1_rysn1")]
+
+[node name="Player" parent="." unique_id=1998371338 instance=ExtResource("2_c6rj5")]
