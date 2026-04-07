@@ -10,7 +10,8 @@ ambient_light_color = Color(0.70980394, 0.70980394, 0.56078434, 1)
 
 [node name="World" type="Node3D" unique_id=1913864307]
 
-[node name="Space" parent="." unique_id=79901660 instance=ExtResource("1_nnsk1")]
+[node name="Space" parent="." unique_id=79901660 node_paths=PackedStringArray("focus") instance=ExtResource("1_nnsk1")]
+focus = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1998371338 instance=ExtResource("2_rwgxs")]
 

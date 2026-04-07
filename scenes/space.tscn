@@ -8,7 +8,6 @@
 [node name="Space" type="Node3D" unique_id=79901660]
 script = ExtResource("1_dtwn4")
 space_chunk_scene = ExtResource("1_rysn1")
-chunk_radius = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1276574690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.192349, 0, 0)
