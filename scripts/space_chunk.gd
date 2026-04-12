@@ -18,7 +18,7 @@ func generate() -> void:
 			for z in range(-chunk_size, chunk_size):
 				var global_coords: Vector3 = Vector3(global_position.x + x,global_position.y + y,global_position.z + z)
 				var noise_val = fast_noise_lite.get_noise_3dv(global_coords)
-				if  noise_val > 0.67:
+				if  noise_val > 0.80:
 					var space_object = SPACE_OBJECT.instantiate()
 					add_child(space_object);
 					space_object.global_position = global_coords

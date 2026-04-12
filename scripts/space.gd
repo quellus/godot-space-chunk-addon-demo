@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 				_pop_gen_queue()
 			chunk_process_state = ChunkProcessState.DELETE
 	else:
-		push_error("Space object does not have focus")
+		push_error("Space does not have focus")
 
 
 func _add_chunks_to_gen_queue():
