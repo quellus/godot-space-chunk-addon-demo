@@ -11,7 +11,7 @@ var focus_chunk_coord: Vector3i:
 			focus_chunk_coord = value
 			_add_chunks_to_gen_queue()
 			_add_chunks_to_delete_queue()
-			print_debug("Active chunks: ", active_chunks.size(), " Del queue: ", chunk_delete_queue.size(), " Gen queue: ", chunk_generate_queue.size())
+			print_debug("Chunk queues updated... Active chunks: ", active_chunks.size(), " Del queue: ", chunk_delete_queue.size(), " Gen queue: ", chunk_generate_queue.size())
 
 var active_chunks: Dictionary[Vector3i, SpaceChunk] = {}
 var chunk_delete_queue: Array[SpaceChunk] = []
@@ -23,6 +23,18 @@ enum ChunkProcessState {
 	DELETE,
 	GENERATE
 }
+
+
+func _ready() -> void:
+	if is_instance_valid(focus):
+		var prev_focus_chunk_coord = focus_chunk_coord
+		focus_chunk_coord = Vector3i(focus.global_position / chunk_size)
+		if prev_focus_chunk_coord == focus_chunk_coord:
+			_add_chunks_to_gen_queue()
+			_add_chunks_to_delete_queue()
+	else:
+		push_error("focus isn't ready yet")
+
 
 func _process(_delta: float) -> void:
 	if is_instance_valid(focus):
@@ -45,9 +57,8 @@ func _add_chunks_to_gen_queue():
 		for y in range(-chunk_radius, chunk_radius):
 			for z in range(-chunk_radius, chunk_radius):
 				var chunk_coord: Vector3i = Vector3i(x,y,z) + focus_chunk_coord
-				if not is_instance_valid(chunk_coord):
-					if chunk_coord not in chunk_generate_queue:
-						chunk_generate_queue.append(chunk_coord)
+				if chunk_coord not in active_chunks or not is_instance_valid(active_chunks[chunk_coord]):
+					chunk_generate_queue.append(chunk_coord)
 
 
 func _add_chunks_to_delete_queue():
