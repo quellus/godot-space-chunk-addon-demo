@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddohm3bjb87bd"]
 
-[ext_resource type="PackedScene" uid="uid://ej76omctqltq" path="res://addons/godot-space-chunk-addon/space.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://ej76omctqltq" path="res://scenes/space.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cl5gejp3whfpg" path="res://scenes/player.tscn" id="2_rwgxs"]
 
 [sub_resource type="Environment" id="Environment_4wyf3"]

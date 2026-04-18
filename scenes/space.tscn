@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ej76omctqltq"]
+
+[ext_resource type="Script" uid="uid://da1dnkf20tinv" path="res://addons/space_chunk_system/space.gd" id="1_dtwn4"]
+[ext_resource type="PackedScene" uid="uid://dxtenddefygd3" path="res://scenes/space_chunk.tscn" id="1_rysn1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dtwn4"]
+
+[node name="Space" type="Node3D" unique_id=79901660]
+script = ExtResource("1_dtwn4")
+space_chunk_scene = ExtResource("1_rysn1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1276574690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.192349, 0, 0)
+mesh = SubResource("SphereMesh_dtwn4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=554691334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07184696, 0, -25.794714)
+mesh = SubResource("SphereMesh_dtwn4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=344717105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.773096, 0, 0.009290695)
+mesh = SubResource("SphereMesh_dtwn4")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1901659598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027195454, 0, 10.324951)
+mesh = SubResource("SphereMesh_dtwn4")
